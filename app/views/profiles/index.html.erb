@@ -1,0 +1,62 @@
+
+<p id="notice" class="alert" role="alert"><%= notice %></p>
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Profiles</h1>
+    <%= link_to 'New Profile', new_profile_path, class: "btn btn-primary" %>
+</div>
+
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Dob</th>
+      <th>Country of birth</th>
+      <th>Country of work</th>
+      <th>Current location</th>
+      <th>Work experience in years</th>
+      <th>Work permit of countries</th>
+      <th>Preferred work location</th>
+      <th>Expected salary</th>
+      <th>Notice period in days</th>
+      <th>User</th>
+      <th>Gender</th>
+      <th>Marital status</th>
+      <th>Current address</th>
+      <th>Premanent address</th>
+      <th>Differently abled</th>
+      <th>Languages known</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profiles.each do |profile| %>
+      <tr>
+        <td><%= profile.dob %></td>
+        <td><%= profile.country_of_birth %></td>
+        <td><%= profile.country_of_work %></td>
+        <td><%= profile.current_location %></td>
+        <td><%= profile.work_experience_in_years %></td>
+        <td><%= profile.work_permit_of_countries %></td>
+        <td><%= profile.preferred_work_location %></td>
+        <td><%= profile.expected_salary %></td>
+        <td><%= profile.notice_period_in_days %></td>
+        <td><%= profile.user_id %></td>
+        <td><%= profile.gender %></td>
+        <td><%= profile.marital_status %></td>
+        <td><%= profile.current_address %></td>
+        <td><%= profile.premanent_address %></td>
+        <td><%= profile.differently_abled %></td>
+        <td><%= profile.languages_known %></td>
+        <td>
+          <%= link_to 'Show', profile, class: "btn btn-primary" %>
+          <%= link_to 'Edit', edit_profile_path(profile), class: "btn btn-primary" %>
+          <%= link_to 'Delete', profile, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

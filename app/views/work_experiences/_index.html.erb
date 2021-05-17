@@ -1,0 +1,46 @@
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Organization</th>
+      <th>Deignation</th>
+      <th>Country</th>
+      <th>Location</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Salary monthly</th>
+      <th>Salary yearly</th>
+      <th>Salary currency</th>
+      <th>Benefits</th>
+      <th>Current</th>
+      <th>User</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @work_experiences.each do |work_experience| %>
+      <tr>
+        <td><%= work_experience.organization %></td>
+        <td><%= work_experience.deignation %></td>
+        <td><%= work_experience.country %></td>
+        <td><%= work_experience.location %></td>
+        <td><%= work_experience.start_date %></td>
+        <td><%= work_experience.end_date %></td>
+        <td><%= work_experience.salary_monthly %></td>
+        <td><%= work_experience.salary_yearly %></td>
+        <td><%= work_experience.salary_currency %></td>
+        <td><%= work_experience.benefits %></td>
+        <td><%= work_experience.current %></td>
+        <td><%= work_experience.user_id %></td>
+        <td>
+          <%= link_to 'Show', work_experience, class: "btn btn-primary" %>
+          <%= link_to 'Edit', edit_work_experience_path(work_experience), class: "btn btn-primary" %>
+          <%= link_to 'Delete', work_experience, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

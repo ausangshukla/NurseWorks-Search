@@ -1,0 +1,71 @@
+<%= form_with(model: work_experience) do |form| %>
+  <% if work_experience.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(work_experience.errors.count, "error") %> prohibited this work_experience from being saved:</h2>
+
+      <ul>
+        <% work_experience.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" class="form-group">
+    <%= form.label :organization %>
+    <%= form.text_field :organization, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :deignation %>
+    <%= form.text_field :deignation, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :country %>
+    <%= form.text_field :country, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :location %>
+    <%= form.text_field :location, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :salary_monthly %>
+    <%= form.text_field :salary_monthly, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :salary_yearly %>
+    <%= form.text_field :salary_yearly, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :salary_currency %>
+    <%= form.text_field :salary_currency, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :benefits %>
+    <%= form.text_area :benefits, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :current %>
+    <%= form.check_box :current, class: "form-control" %>
+  </div>
+
+<button type="submit" class="btn btn-primary">Save</button>
+
+<% end %>

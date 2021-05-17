@@ -20,7 +20,7 @@ default: &default
 
 development:
   <<: *default
-  database: <%= ENV['CYPRESS'] ? 'NurseWorks_Test' : 'NurseWorks_Dev' %>
+  database: <%= ENV['CYPRESS'] ? 'NurseWorksSearch_Test' : 'NurseWorksSearch_Dev' %>
 
 
 # Warning: The database defined as "test" will be erased and
@@ -28,15 +28,15 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: NurseWorks_Test
+  database: NurseWorksSearch_Test
 
 staging:
   <<: *default
   password: root1234
-  database: NurseWorks_Staging
+  database: NurseWorksSearch_Staging
 
 
 production:
   <<: *default
   password: root1234
-  database: NurseWorks_Staging
+  database: NurseWorksSearch_Staging

@@ -1,0 +1,9 @@
+
+<p id="notice" class="alert" role="alert"><%= notice %></p>
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Work Experiences</h1>
+    <%= link_to 'New Work Experience', new_work_experience_path, class: "btn btn-primary" %>
+</div>
+
+<%= render "/work_experiences/index" %>

@@ -32,18 +32,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    if @user.bio.blank?
-      @user.bio = " #{@user.full_name} - Hired YYYY <br>
-      Year of Birth - YYYY <br>
-      Caregiver - XX+ years <br>
-      State License - <br>
-      Criminal Background - None <br>
-      Contact number - #{@user.phone} <br>
-      <br>
-      <br>
-      Brief Summary Here
-      "
-    end
+    
   end
 
   # POST /users or /users.json
@@ -98,7 +87,7 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :role, :earnings, :deactivated,
-        :emergency_contact_name, :emergency_contact_phone, :profile_image, :bio, :phone)
+      params.require(:user).permit(:first_name, :last_name, :email, :role, 
+        :deactivated,  :phone)
     end
 end

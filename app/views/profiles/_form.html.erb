@@ -1,0 +1,107 @@
+<%= form_with(model: profile) do |form| %>
+  <% if profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+        <% profile.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" class="form-group">
+    <%= form.label :dob %>
+    <%= form.date_select :dob, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :country_of_birth %>
+    <%= form.text_field :country_of_birth, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :country_of_work %>
+    <%= form.text_field :country_of_work, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :current_location %>
+    <%= form.text_field :current_location, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :work_experience_in_years %>
+    <%= form.text_field :work_experience_in_years, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :work_permit_of_countries %>
+    <%= form.text_field :work_permit_of_countries, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :preferred_work_location %>
+    <%= form.text_field :preferred_work_location, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :expected_salary %>
+    <%= form.text_field :expected_salary, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :notice_period_in_days %>
+    <%= form.number_field :notice_period_in_days, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :gender %>
+    <%= form.text_field :gender, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :marital_status %>
+    <%= form.text_field :marital_status, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :current_address %>
+    <%= form.text_area :current_address, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :premanent_address %>
+    <%= form.text_area :premanent_address, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :differently_abled %>
+    <%= form.check_box :differently_abled, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :languages_known %>
+    <%= form.text_field :languages_known, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+      <%= form.label :profile_image %>
+      <%= form.file_field :profile_image, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :bio, "Bio" %>
+    <%= form.rich_text_area :bio, rows:40, class: "form-control trix-editor trix-content" %>
+  </div>
+
+
+<button type="submit" class="btn btn-primary">Save</button>
+
+<% end %>

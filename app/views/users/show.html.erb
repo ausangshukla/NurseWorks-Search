@@ -4,15 +4,6 @@
 
 
 
-<tr>
-  <td>
-    <strong>Profile Pic:</strong>
-  </td>
-  <td>
-      <%= @user.profile_image.attached? ? image_tag(@user.profile_image, class: "profile_pic") : "Not Uploaded" %>
-  </td>
-</tr>
-
 
 <tr>
   <td>
@@ -75,24 +66,6 @@
 
   <tr>
     <td>
-      <strong>Emergency Contact Name:</strong>
-    </td>
-    <td>
-        <%= @user.emergency_contact_name %>
-      </td>
-  </tr>
-
-  <tr>
-    <td>
-      <strong>Emergency Contact Phone:</strong>
-    </td>
-    <td>
-        <%= @user.emergency_contact_phone %>
-      </td>
-  </tr>
-
-  <tr>
-    <td>
       <strong>Currently Active:</strong>
     </td>
     <td>
@@ -102,17 +75,15 @@
 
 <% end %>
 
-<tr>
-  <td>
-    <strong>Bio:</strong>
-  </td>
-  <td>
-      <%= @user.bio %>
-    </td>
-</tr>
-
 
 </table> 
+
+<% 
+  if @user.profile
+  @profile = @user.profile 
+%>
+  <%= render "/profiles/show" %>
+<% end %>
 
 
 <div class="btn-div">
@@ -130,11 +101,20 @@
 </div>
 
 
+
+
+
 <% if current_user.role == 'Admin' && !params[:print].present? %>
 
+
   <div>
-    <% @support_requests = @user.support_requests.includes(:user, :supporting_doc_blob).limit(10).order("id desc") %>
-    <%= render "/support_requests/index" %>
+    <% @work_experiences = @user.work_experiences %>
+    <%= render "/work_experiences/index" %>
+  </div>
+
+  <div>
+    <% @qualifications = @user.qualifications %>
+    <%= render "/qualifications/index" %>
   </div>
 
   <div>
@@ -143,3 +123,4 @@
   </div>
 
 <% end %>
+

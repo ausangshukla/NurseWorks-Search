@@ -10,22 +10,21 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  ROLES = ["User", "Admin"]
+  ROLES = ["User", "Admin", "Agency"]
   
-  has_many :support_requests, dependent: :delete_all
   has_many :user_docs, dependent: :delete_all
-
-  has_rich_text :bio
   
-  has_one_attached :profile_image
+  has_one :profile, dependent: :destroy
+  has_many :work_experiences, dependent: :delete_all
+  has_many :qualifications, dependent: :delete_all
 
-  before_create :setup_role
+  before_create :init
 
   def full_name
     first_name + " " + last_name
   end
   
-  def setup_role
+  def init
     self.role = "User"
     self.deactivated = false
   end
@@ -43,14 +42,5 @@ class User < ApplicationRecord
     self.deactivated ? "No" : "Yes"
   end
 
-  validate :acceptable_profile_image
-
-  def acceptable_profile_image
-      return unless profile_image.attached?
-      
-      unless profile_image.byte_size <= 10.megabyte
-          errors.add(:profile_image, "is too big. Must be less than 10 MB")
-      end
-  end
 
 end

@@ -1,0 +1,62 @@
+<%= form_with(model: qualification) do |form| %>
+  <% if qualification.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(qualification.errors.count, "error") %> prohibited this qualification from being saved:</h2>
+
+      <ul>
+        <% qualification.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" class="form-group">
+    <%= form.label :course_name %>
+    <%= form.text_field :course_name, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :course_type %>
+    <%= form.text_field :course_type, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :specializaion %>
+    <%= form.text_field :specializaion, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :institute %>
+    <%= form.text_field :institute, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :country %>
+    <%= form.text_field :country, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :state %>
+    <%= form.text_field :state, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :date_of_passing %>
+    <%= form.date_select :date_of_passing, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :pass_fail %>
+    <%= form.check_box :pass_fail, class: "form-control" %>
+  </div>
+
+  <div class="field" class="form-group">
+    <%= form.label :grade %>
+    <%= form.text_field :grade, class: "form-control" %>
+  </div>
+
+  
+<button type="submit" class="btn btn-primary">Save</button>
+
+<% end %>

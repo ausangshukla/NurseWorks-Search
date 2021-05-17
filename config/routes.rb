@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :qualifications
+  resources :work_experiences
+  resources :profiles
   resources :user_docs do
-    get 'search', on: :collection
-  end
-
-  resources :support_requests do
     get 'search', on: :collection
   end
 

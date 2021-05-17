@@ -1,0 +1,39 @@
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Course name</th>
+      <th>Course type</th>
+      <th>Specializaion</th>
+      <th>Institute</th>
+      <th>Country</th>
+      <th>State</th>
+      <th>Date of passing</th>
+      <th>Pass fail</th>
+      <th>Grade</th>
+      <th>User</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @qualifications.each do |qualification| %>
+      <tr>
+        <td><%= qualification.course_name %></td>
+        <td><%= qualification.course_type %></td>
+        <td><%= qualification.specializaion %></td>
+        <td><%= qualification.institute %></td>
+        <td><%= qualification.country %></td>
+        <td><%= qualification.state %></td>
+        <td><%= qualification.date_of_passing %></td>
+        <td><%= qualification.pass_fail %></td>
+        <td><%= qualification.grade %></td>
+        <td><%= qualification.user_id %></td>
+        <td>
+          <%= link_to 'Show', qualification, class: "btn btn-primary" %>
+          <%= link_to 'Edit', edit_qualification_path(qualification), class: "btn btn-primary" %>
+          <%= link_to 'Delete', qualification, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

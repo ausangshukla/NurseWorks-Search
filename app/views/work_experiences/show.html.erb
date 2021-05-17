@@ -1,0 +1,131 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table table-bordered table-striped">
+
+
+
+<tr>
+  <td>
+    <strong>Organization:</strong>
+  </td>
+  <td>
+          <%= @work_experience.organization %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Deignation:</strong>
+  </td>
+  <td>
+          <%= @work_experience.deignation %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Country:</strong>
+  </td>
+  <td>
+          <%= @work_experience.country %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Location:</strong>
+  </td>
+  <td>
+          <%= @work_experience.location %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Start date:</strong>
+  </td>
+  <td>
+          <%= @work_experience.start_date %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>End date:</strong>
+  </td>
+  <td>
+          <%= @work_experience.end_date %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Salary monthly:</strong>
+  </td>
+  <td>
+          <%= @work_experience.salary_monthly %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Salary yearly:</strong>
+  </td>
+  <td>
+          <%= @work_experience.salary_yearly %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Salary currency:</strong>
+  </td>
+  <td>
+          <%= @work_experience.salary_currency %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Benefits:</strong>
+  </td>
+  <td>
+          <%= @work_experience.benefits %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Current:</strong>
+  </td>
+  <td>
+          <%= @work_experience.current %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>User:</strong>
+  </td>
+  <td>
+          <%= @work_experience.user_id %>
+      </td>
+</tr>
+
+
+</table> 
+
+<%= link_to 'Edit', edit_work_experience_path(@work_experience), class:"btn btn-primary" %> |
+<%= link_to 'Back', work_experiences_path, class:"btn btn-primary" %>
+

@@ -44,5 +44,5 @@ if ENV.fetch("RAILS_ENV") == 'staging' || ENV.fetch("RAILS_ENV") == 'production'
     #
     preload_app!
 
-    bind  "unix:///home/ubuntu/NurseWorks/shared/tmp/sockets/NurseWorks-puma.sock"
+    bind  "unix:///home/ubuntu/NurseWorksSearch/shared/tmp/sockets/NurseWorksSearch-puma.sock"
 end

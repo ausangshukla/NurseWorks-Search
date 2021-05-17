@@ -1,0 +1,184 @@
+<table class="table table-bordered table-striped">
+
+
+<tr>
+  <td>
+    <strong>Profile Pic:</strong>
+  </td>
+  <td>
+      <%= @profile.profile_image.attached? ? image_tag(@profile.profile_image, class: "profile_pic") : "Not Uploaded" %>
+  </td>
+</tr>
+
+
+
+<tr>
+  <td>
+    <strong>Dob:</strong>
+  </td>
+  <td>
+          <%= @profile.dob %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Country of birth:</strong>
+  </td>
+  <td>
+          <%= @profile.country_of_birth %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Country of work:</strong>
+  </td>
+  <td>
+          <%= @profile.country_of_work %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Current location:</strong>
+  </td>
+  <td>
+          <%= @profile.current_location %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Work experience in years:</strong>
+  </td>
+  <td>
+          <%= @profile.work_experience_in_years %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Work permit of countries:</strong>
+  </td>
+  <td>
+          <%= @profile.work_permit_of_countries %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Preferred work location:</strong>
+  </td>
+  <td>
+          <%= @profile.preferred_work_location %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Expected salary:</strong>
+  </td>
+  <td>
+          <%= @profile.expected_salary %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Notice period in days:</strong>
+  </td>
+  <td>
+          <%= @profile.notice_period_in_days %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>User:</strong>
+  </td>
+  <td>
+          <%= @profile.user_id %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Gender:</strong>
+  </td>
+  <td>
+          <%= @profile.gender %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Marital status:</strong>
+  </td>
+  <td>
+          <%= @profile.marital_status %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Current address:</strong>
+  </td>
+  <td>
+          <%= @profile.current_address %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Premanent address:</strong>
+  </td>
+  <td>
+          <%= @profile.premanent_address %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Differently abled:</strong>
+  </td>
+  <td>
+          <%= @profile.differently_abled %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Languages known:</strong>
+  </td>
+  <td>
+          <%= @profile.languages_known %>
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Bio:</strong>
+  </td>
+  <td>
+      <%= @profile.bio %>
+    </td>
+</tr>
+
+</table> 

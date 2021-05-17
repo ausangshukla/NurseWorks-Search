@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     end
 
     def set_search_controller
-      @search_controller = params[:controller] != "home" ? params[:controller] : "support_requests" 
+      @search_controller = params[:controller] != "home" ? params[:controller] : "users" 
     end
   
 end
