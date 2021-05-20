@@ -10,32 +10,5 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
-
- @import "./actiontext.scss";
-
-.profile_pic {
-     max-width: 200px;
-     max-height: 400px;
- }
-
-
-a.btn {
-    color: white !important;
-}     
-
-a:visited, a:hover {
-    color: #4e73df;
-    background-color: transparent;
-}
- 
-#notice {
-    text-align: center;
-}
-
-.btn-div {
-    text-align: center;
-    padding: 20px;
-}
