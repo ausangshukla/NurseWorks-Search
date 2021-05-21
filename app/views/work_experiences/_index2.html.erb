@@ -1,0 +1,69 @@
+	<!--begin::Advance Table: Widget 7-->
+    <div class="card card-custom gutter-b">
+        <!--begin::Header-->
+        <div class="card-header border-0 pt-5">
+            <h3 class="card-title align-items-start flex-column">
+                <span class="card-label font-weight-bolder text-dark">Work Experience</span>
+                <span class="text-muted mt-3 font-weight-bold font-size-sm">More than 400+ new members</span>
+            </h3>
+        </div>
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body pt-2 pb-0 mt-n3">
+            <div class="tab-content mt-5" id="myTabTables12">
+                <!--begin::Tap pane-->
+                <div class="tab-pane fade  show active" id="kt_tab_pane_12_1" role="tabpanel" aria-labelledby="kt_tab_pane_12_1">
+                    <!--begin::Table-->
+                    <div class="table-responsive">
+                        <table class="table table-borderless table-vertical-center">
+                            <thead>
+                                <tr>
+                                    <th class="p-0 w-50px"></th>
+                                    <th class="p-0 min-w-200px"></th>
+                                    <th class="p-0 min-w-120px"></th>
+                                    <th class="p-0 min-w-120px"></th>
+                                    <th class="p-0 min-w-120px"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%work_experiences.each do |work_ex|%>
+                                <tr>
+                                    <td class="p-0 py-4">
+                                        <div class="symbol symbol-50 symbol-light mr-5">
+                                            <span class="symbol-label">
+                                                <img src="/assets/media/svg/misc/005-bebo.svg" class="h-50 align-self-center" alt="">
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td class="pl-0">
+                                        <a href="<%=work_experience_path(work_ex)%>" class="text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg"><%=work_ex.organization%></a>
+                                        <span class="text-muted font-size-sm font-weight-bold d-block"><%=work_ex.start_date%> - <%=work_ex.end_date%></span>
+                                    </td>
+                                    <td class="text-right pr-0">
+                                        <span class="text-dark-75 font-weight-bolder d-block font-size-lg"><%=work_ex.salary_currency%> <%=work_ex.salary_yearly%></span>
+                                        <span class="text-muted font-size-sm font-weight-bold"><%=work_ex.deignation%></span>
+                                    </td>
+                                    <td class="text-right pr-0">
+                                        <span class="text-dark-75 font-weight-bolder d-block font-size-lg"><%=work_ex.location%></span>
+                                        <span class="text-muted font-size-sm font-weight-bold"><%=work_ex.country%></span>
+                                    </td>
+                                    <td class="text-right">
+                                        <% if work_ex.current %>
+                                            <span class="label label-lg label-light-success label-inline">Current</span>
+                                        <% else %>
+                                            <span class="label label-lg label-light-danger label-inline">Previous</span>
+                                        <% end %>
+                                    </td>
+                                </tr>
+                                <% end %>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--end::Table-->
+                </div>
+                <!--end::Tap pane-->
+            </div>
+        </div>
+        <!--end::Body-->
+    </div>
+    <!--end::Advance Table Widget 7-->

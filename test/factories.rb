@@ -3,7 +3,7 @@ FactoryBot.define do
   factory :qualification do
     course_name { ["BSc Nursing", "MSc Nursing", "Diploma in Home Nursing"][rand(3)] }
     course_type { "Full Time" }
-    specializaion { ["Ophthalmic Care", "Trauma Care", "Elder Care", "Pediatrics"][rand(4)] }
+    specialization { ["Ophthalmic Care", "Trauma Care", "Elder Care", "Pediatrics"][rand(4)] }
     institute { Faker::Company.name }
     country { "India" }
     state { "Kerala" }
@@ -54,5 +54,9 @@ FactoryBot.define do
       role {"User"}
     end
 
+    factory :user_doc do 
+      doc_type { UserDoc::TYPES[ rand(UserDoc::TYPES.length) ]}
+      description { Faker::Lorem.paragraphs(number: 3).join(" ") }
+    end
     
 end

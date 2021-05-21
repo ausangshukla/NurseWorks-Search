@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 2021_05_17_140845) do
   create_table "qualifications", charset: "utf8mb3", force: :cascade do |t|
     t.string "course_name", limit: 100
     t.string "course_type", limit: 10
-    t.string "specializaion", limit: 50
+    t.string "specialization", limit: 50
     t.string "institute", limit: 100
     t.string "country", limit: 50
     t.string "state", limit: 30
